@@ -7,14 +7,14 @@ const getTask = async(event)=>{
             TableName: 'myTable',
             Key: {_id:id}
         }).promise()
-        console.log('Date id--',{id,data} )
+        // console.log('Date id--',{id,data} )
         const task = data.Item
         return {
             status : 200,
             body : task  
         }
     } catch (error) {
-        console.log('ERROR--', error)
+        // console.log('ERROR--', error)
     }
 }
 module.exports = {getTask}

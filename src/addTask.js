@@ -9,13 +9,13 @@ module.exports.addTask = async(event)=>{
         const _id = v4()
         const dynamodb = new AWS.DynamoDB.DocumentClient()
         const newData = { _id,title,description,createdAt,done:false }
-        console.log("newData DATA",newData)
+        // console.log("newData DATA",newData)
     
         const resAws =await dynamodb.put({
             TableName: 'myTable',
             Item: newData
         }).promise()
-        console.log("resAws",resAws)
+        // console.log("resAws",resAws)
         return {
             status : 200,
             // body : JSON.stringify(newData)

@@ -3,10 +3,10 @@ const updateTask = async (event)=>{
     try {
         const dynamodb = new AWS.DynamoDB.DocumentClient()
         const {id} = event.pathParameters
-        console.log('Date body--id',id )
-        console.log('event.body',event.body )
+        // console.log('Date body--id',id )
+        // console.log('event.body',event.body )
         const {done,title,description} = JSON.parse(event.body)
-        console.log('Date body--',done,title,description)
+        // console.log('Date body--',done,title,description)
         await dynamodb.update({
             TableName:'myTable',
             Key: {_id:id},

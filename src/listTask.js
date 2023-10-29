@@ -5,7 +5,7 @@ const listTask = async(event)=>{
         const data = await dynamodb.scan({
             TableName:'myTable'
         }).promise()
-        console.log("data",data)
+        // console.log("data",data)
         const tasks = data.Items
         return {
             status : 200,
